@@ -1,0 +1,61 @@
+{% extends 'base.html ' %}
+
+{% block header %}
+
+<h2><img src="{{ url_for('static', filename = '/img/gatito-1.png')}}" width="32px" height="32px">
+    {% block title %} Publicaciones {% endblock %}
+    <img src="{{ url_for('static', filename = '/img/gatito.png')}}" width="32px" height="32px">
+</h2>
+{% if g.user %}
+<a class="np" href="{{ url_for('blog.create') }}">Nueva Publicacion</a>
+{% endif %}
+
+
+{% endblock %}
+
+{% block content %}
+
+{% for post in posts %}
+
+<section class="our-publication pt-100 pb-70">
+    <article>
+        <div class="usuario-2">
+            <div class="sc-2">
+                <h1>{{ post.title }}</h1>
+                <p> Publicado por {{ get_user(post.author).username }}
+                    el {{ post.created.strftime('%Y-%m-%d') }} </p>
+            </div>
+
+
+            <nav class="nav-2">
+                {% if g.user.id == post.author %}
+                <a href="{{ url_for('blog.update', id = post.id) }}">Editar</a>
+                <a href="{{ url_for('blog.delete', id = post.id) }}">Eliminar</a>
+                {% endif %}
+            </nav>
+        </div>
+        <figure>
+            <img src="/static/arch/{{post.im}}" alt="imagen1" width="300px" height="300px">
+            <p class="p-body">{{ post.body }}</p> </img>
+        </figure>
+
+    </article>
+
+</section>
+{% endfor %}
+
+{% endblock %}
+
+
+<!--
+    iteramos una plantilla para cada articulo, entonces cada uno de esos block
+    se coloca como si fuera un articulo y en cada articulo vamos a recuperar..
+    dentro del for se crea una plantilla en este caso usamos la etiqueta article, 
+    y luego esto tambien va a tener la parte de encabezado y la parte de contenido.
+    En el encabezado coloco headers(contiene el titulo del articulo o del blog)
+    debajo del header voy a tener un div para mi articulo y dentro un parrafo, 
+    dentro del parrafo voy a tener todo el articulo q seria el cuerpo.
+      -->
+
+<!-- en el segundo if, va lo que el usuario puede editar o eliminar. Solamente el usuario correspodiente
+al post puede eliminar o editar sus post, otros no. -->

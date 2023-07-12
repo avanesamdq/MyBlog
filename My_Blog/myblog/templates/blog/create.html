@@ -1,0 +1,33 @@
+{% extends 'base.html ' %}
+
+{% block header %}
+
+<h2>{% block title %}Crear una Publicacion {% endblock %}</h2>
+
+{% endblock %}
+
+{% block content %}
+<div class="form-act-cre">
+    <form method="post" enctype=multipart/form-data>
+        <div class="form-group">
+            <label for="title">Titulo</label>
+            <input class="form-control" type="text" name='title' id='title'
+                placeholder="Escribe un titulo para tu post." required>
+        </div>
+
+        <div class="form-group">
+            <label for="body">Contenido</label>
+            <textarea class="form-control" name="body" id="body" cols="30" rows="5"
+                placeholder="Escribe algo..."></textarea>
+        </div>
+
+        <div class="form-group">
+            <label for="file">Elige una imagen</label>
+            <input type=file class="form-control-file" name=file id="file" required>
+        </div>
+        <button type="submit" class="btn btn-primary">Publicar</button>
+
+    </form>
+
+</div>
+{% endblock %}

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="{{ url_for('static', filename = '/img/blog.ico') }}" type="image/x-icon">
+    <title>{% block title %}{% endblock %}--MyBlog</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename = '/css/styles.css') }}" type="text/css">
+
+    <link type="text/css" rel="stylesheet"
+        href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css"
+        integrity="sha256-h20CPZ0QyXlBuAw7A+KluUYx/3pK+c7lYEpqLTlxjYQ=" crossorigin="anonymous" />
+
+
+</head>
+
+<body>
+    <header class="header">
+        <div class="usuario">
+            <div class="sc">
+                <a href="{{ url_for('blog.index') }}">
+                    <img src="{{ url_for('static', filename = '/img/SuitCat-2.png') }}" width="350px" height="100px">
+                </a>
+            </div>
+            <nav>
+                {% if g.user %}
+                <img src=" {{ url_for('static', filename = '/img/user.png') }}" alt="">
+                <span>{{ g.user.username }}</span>
+                <a href="{{ url_for('auth.logout') }}">Cerrar Sesión </a>
+                {% else %}
+                <a href="{{ url_for('auth.register') }}">Registrarse</a>
+                <a href="{{ url_for('auth.login') }}">Iniciar Sesión </a>
+                {% endif %}
+            </nav>
+        </div>
+
+    </header>
+
+    <section class="section">
+        <div class="content">
+            <header class="header-title">{% block header %}{% endblock %}</header>
+
+            {% for message in get_flashed_messages() %}
+            <div class="flash"> {{ message }}</div>
+            {% endfor %}
+
+            {% block content %} {% endblock %}
+        </div>
+    </section>
+
+
+    <script src="{{url_for('static', filename = 'js/main.js')}}"></script>
+
+</body>
+
+</html>
+
+<!--
+    coloco un if, si el usuario existe eso quiere decir que esta logueado en la primera 
+    parte coloco un spam el cual va a contener el nombre del usuario logueado. 
+    Luego sustituye iniciar sesion por cerrar sesion. En caso de que no este logueado 
+    coloco un else, si no esta logueado que diga registrar usuario o iniciar sesion. 
+   -->

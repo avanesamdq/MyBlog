@@ -1,0 +1,288 @@
+
+@import url('https://fonts.googleapis.com/css?family=Dancing+Script');
+
+@import url('https://fonts.googleapis.com/css2?family=Courgette&display=swap');
+
+
+/* MENU DE NAVEGACION */
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 20px;
+    background: #fff8e7; 
+    
+}
+
+header h2{
+    font-family: 'Courgette', cursive;
+    font-size: 40px;
+    margin: 0px auto;
+}
+.usuario{
+    display:flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 100%;
+}
+
+
+.usuario nav a{
+    text-decoration:none;
+    color:rgb(8, 8, 8);
+    font-family: Georgia, serif;
+    margin: 0 10px;
+    background-image: linear-gradient( #febed100, #eae6ca) ;
+    padding: 10px;
+    margin: 10px;
+    border-radius: 30px;
+    font-size: large;
+
+}
+
+.section{
+    background-image: linear-gradient( #eae6ca, #febed100) ;
+
+}
+
+.usuario nav{
+    display: flex;
+    align-items: center;
+    padding: 5px;
+    margin: 5px; }
+
+
+.usuario nav span{
+    margin: 0 10px 0 0;
+    color: rgb(0, 0, 0);
+    font-family: "Gill Sans", sans-serif;
+    font-weight: 800;
+    font-size: medium;
+}
+.usuario nav img{
+    width: 30px;
+    height: 30px;
+}
+
+/* CONTENT */
+
+.np{
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+    background-image: radial-gradient(circle, rgba(234, 230, 202,1) 90%, rgba(51,56,57,1) 96%);
+    padding: 10px;
+    margin: 10px;
+    border-radius: 30px;
+    font-size: medium;
+}
+
+
+.content{
+    max-width: 85%; /*que ocupe el 85% de navegador*/
+    margin: 10px auto; 
+    
+}
+
+.content .header-title{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-image: linear-gradient( rgba(234, 230, 202,0) 98%, rgba(51,56,57,1) ); 
+    color: #b8774f;
+    padding: 10px 0;
+}
+
+/* MENSAJE DE FLASH */
+
+.flash{
+    background-color: red; 
+    color:black; 
+    padding: 10px; 
+    display:flex;
+    align-items:center;
+    justify-content:right;
+    max-width: 20%;
+}
+
+
+/* INDEX - PUBLICACIONES */
+section{
+    position: relative;
+    min-height: 500px;
+}
+
+
+.pt-100{
+    padding-top: 20px;
+}
+.pb-70{
+    padding-bottom: 70px;
+    background-image: linear-gradient( rgba(234, 230, 202,0) 98%, rgba(51,56,57,1) ); 
+}
+
+.usuario-2{
+        display:flex;
+        align-items: center;
+        justify-content: space-between;
+        max-width: 100%;
+}
+
+.usuario-2 .nav-2 a{
+        text-decoration:none;
+        color:rgb(8, 8, 8);
+        font-family: cursive;
+        margin: 0 10px;
+        background-image: linear-gradient( #febed100, #c1a758) ;
+        padding: 5px;
+        margin: 10px;
+        border-radius: 30px;
+        font-size: medium;
+    
+    }
+.usuario-2 .nav-2{
+    display: flex;
+    align-items: center;
+    padding: 5px;
+    margin: 5px; }
+.sc-2 h1{
+    color: #52301b;
+    font-family: 'Dancing Script', cursive;
+    font-size: xx-large;
+    
+    
+}
+.sc-2 p{
+    font-style: italic; 
+    color: #6a3605;
+    font-size: 13px;  
+}
+figure p{
+    color: #52301b;
+    font-family: "a r i a l", serif;
+    
+}
+
+figure img{
+    object-fit: cover;
+    float: left;
+    padding-right: 10px;
+}
+
+/* FORMULARIOS */
+
+form{
+    margin: 10px 0;
+    display: flex;
+    flex-direction: column;
+}
+
+
+form label, input, textarea{
+    font-weight: 600; 
+    margin: 5px 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 18px;
+    padding: 10px;
+    max-width: 90%;
+}
+
+/* DARLE ESTILO AL BOTON PARA Q NO ESTE A LO LARGO DE TODA LA PAGINA */
+/*entre corchetes se indica que tipo de input es */
+
+form input[type = 'submit']{
+    align-self: start ; /* tipo star para q este en el inicio*/
+    min-width: 200px;/*el tamno minimo que puede tener es 200pixeles*/
+}
+
+/* Form Reg-Log */
+
+.form-reg-log{
+    max-width: 40%; /*para q ocupe solo el 30% de la pantalla*/
+    margin: 20px auto;
+    background-color: rgba(119, 118, 118, 0.3);
+    padding: 20px 20px;
+    border-radius: 15px;
+    box-shadow: 14px 14px 20px 0 rgba(20, 20, 20, 0.3) ;
+    
+}
+
+.form-reg-log form .form-control{
+    width: 100%;
+    background-color: transparent;
+    border: none;
+    border-bottom: white thin solid;
+    outline: none;
+    padding: .2rem 0;
+    font-size: .9rem;
+    color: white;
+    border-color: none;
+}
+
+.form-reg-log form .btn-primary{
+    width: 30%;
+    margin: 0 auto;
+    padding: 5px;
+    border-radius: 30px;
+    background-color: #b8774fac ;
+    color: rgb(0, 0, 0);
+    border: none;
+}
+.form-reg-log form .btn-primary:hover{
+    background-color: #b8774f ;
+}
+
+.password-icon {
+    float: right;
+    position: relative;
+    margin: -25px 10px 0 0;
+    cursor: pointer;
+}
+
+/* Form create */
+
+.form-act-cre{
+    margin: 0 auto;
+    background-image: radial-gradient(circle, rgba(243,227,217,1) 10%, rgba(162,94,42,0.5) 96%);
+    border-radius: 20px;
+    box-shadow: 14px 14px 20px 0 rgba(20, 20, 20, 0.3) ;
+    width: 70%;
+
+}
+
+.form-act-cre .form-control{
+    width: 90%;
+    margin: 5px 20px;
+}
+.form-act-cre .form-group{
+    margin: 0 0 0 0;
+}
+
+.form-act-cre .form-group label{
+    font-family: cursive;
+    margin: 5px 2px 5px 25px;
+    padding: 0;
+}
+.form-act-cre .form-group .form-control-file{
+    margin: 5px 2px 5px 20px;
+    border-radius: 5px;
+    font-family: cursive;
+}
+.form-act-cre .btn-primary{
+    width: 120px;
+    margin: 0 55px 5px auto;
+    margin-bottom: 20px;
+    border-radius: 30px;
+    background-color: #b8774fac ;
+    color: rgb(0, 0, 0);
+    border: none;
+    
+}
+.form-act-cre .btn-primary:hover{
+    background-color: #b8774f ;
+
+}
