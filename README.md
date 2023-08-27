@@ -7,6 +7,7 @@
 - MySQL
 - HTML
 - CSS
+- JavaScript
 
 ***En mi blog el usuario puede hacer:***
 - login/logout
